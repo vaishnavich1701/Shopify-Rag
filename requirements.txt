@@ -1,0 +1,13 @@
+requests
+pydantic
+psycopg2-binary
+tiktoken
+python-dotenv
+streamlit
+python-dotenv
+pymongo
+streamlit-chat
+groq
+pypdf
+shopify
+openai
