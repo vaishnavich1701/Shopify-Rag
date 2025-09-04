@@ -1,35 +1,22 @@
-# Shopify RAG Assistant is a compact demo / starter project that shows how to:
+# Shopify RAG Assistant
 
-1) Pull product and policy content from a Shopify store,
+A compact starter/demo that turns your Shopify store content into a Retrieval-Augmented Generation (RAG) assistant.
+It fetches product & policy text, chunks and indexes it in MongoDB Atlas (Atlas Search recommended), then answers shopper questions using a configurable LLM via a friendly Streamlit UI.
 
-2) Chunk and store those snippets in MongoDB Atlas,
+## Key points (short)
 
-3) Search indexed chunks using Atlas Search (preferred) or a local heuristic fallback,
-
-4) Generate grounded, cited answers using an LLM provider (Groq in examples),
-
-5) Provide a developer-friendly Streamlit UI to ingest, inspect, and chat with your shop data.
-
-6) It’s designed for rapid prototyping of a product-help chatbot that can deflect support tickets and help shoppers get instant answers.
+1) Pulls product & policy content from Shopify.
+2) Chunks and stores plain text snippets in MongoDB Atlas (no embeddings required if using Atlas Search).
+3) Searches indexed chunks using Atlas Search (preferred) with a simple local fallback.
+4) Generates grounded, cited answers via a pluggable LLM (Groq / OpenAI compatible).
+5) Provides a Streamlit UI for ingesting, inspecting, and chatting with your indexed shop data.
 
 ## Features
 
-1) Ingest Shopify products + policies into MongoDB (ingest script).
-
-2) Store plain text chunks in a MongoDB collection (no embeddings required — uses Atlas Search).
-
-## Streamlit UI:
-
-1) Background ingestion button (non-blocking).
-
-2) Quick Mongo status / recent chunk viewer.
-
-3) Upload & index single PDFs.
-
-4) Chat UI with greeting, search, and LLM generation.
-
-5) Pluggable LLM provider (Groq/OpenAI-compatible). Simple call_llm() wrapper included.
-
-6) Simple fallback search if Atlas Search not available.
-
-
+1) Ingest Shopify products + policies into MongoDB (background option available).
+2) Store chunked plain text in a collection (fields: text, title, source_url, …).
+3) Search via Atlas Search $search pipeline (highly recommended) with a lightweight fallback if not available.
+4) Chat UI with a friendly greeting, typed user messages, and assistant responses.
+5) Upload & index single PDFs from the UI.
+6) Pluggable LLM: call_llm() wrapper—swap provider and model in .env.
+7) Non-blocking ingestion: run ingestion as a background process from Streamlit.
