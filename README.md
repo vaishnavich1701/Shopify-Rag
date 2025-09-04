@@ -3,7 +3,7 @@
 A compact starter/demo that turns your Shopify store content into a Retrieval-Augmented Generation (RAG) assistant.
 It fetches product & policy text, chunks and indexes it in MongoDB Atlas (Atlas Search recommended), then answers shopper questions using a configurable LLM via a friendly Streamlit UI.
 
-## Key points (short)
+## Key points 
 
 1) Pulls product & policy content from Shopify.
 2) Chunks and stores plain text snippets in MongoDB Atlas (no embeddings required if using Atlas Search).
